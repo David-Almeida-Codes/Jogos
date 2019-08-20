@@ -6,9 +6,13 @@ def play():
     print("********************************")
 
     secret_word = "banana"
+    hit_letters = ["_", "_", "_", "_", "_", "_"]
 
     hanged = False
     hit = False
+
+    print(hit_letters)
+
 
     while(not hanged and not hit):
 
@@ -18,10 +22,10 @@ def play():
         index = 0
         for letter in secret_word:
             if move.upper() == letter.upper():
-                print("I found the letter {} in position {} ".format(move, index))
+                hit_letters[index] = letter
             index = index + 1
 
-        print("Jogando..")
+        print(hit_letters)
 
 
 
