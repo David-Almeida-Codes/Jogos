@@ -11,9 +11,17 @@ def play():
     hit = False
 
     while(not hanged and not hit):
+
+        move = input("type a letter: ")
+        move = move.strip()
+
+        index = 0
+        for letter in secret_word:
+            if move.upper() == letter.upper():
+                print("I found the letter {} in position {} ".format(move, index))
+            index = index + 1
+
         print("Jogando..")
-
-
 
 
 
