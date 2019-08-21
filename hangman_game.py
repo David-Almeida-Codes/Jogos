@@ -1,3 +1,4 @@
+import random
 
 def play():
 
@@ -5,7 +6,19 @@ def play():
     print("  WELCOME TO THE HANGMAN GAME! ")
     print("********************************")
 
-    secret_word = "maca".upper()
+    archive = open("words.txt", "r")
+    words = []
+
+    for line in archive:
+        line = line.strip()
+        words.append(line)
+
+    archive.close()
+
+    number = random.randrange(0, len(words))
+    secret_word = words[number].upper()
+    #print(words)
+
     hit_letters = ["_" for letter in secret_word]
 
     hanged = False
